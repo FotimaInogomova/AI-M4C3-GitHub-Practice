@@ -1,0 +1,8 @@
+<!doctype html><html lang="en"><head><meta charset="utf-8"><title>Example check</title></head><body><h1>Example check</h1><p id="result">Checking...</p><div hidden><span id="tenure"></span><span id="contract"></span><span id="charge"></span><span id="tree"></span><span id="votes"></span><span id="forest"></span></div><script src="model.js"></script><script src="app.js"></script><script>
+try {
+ const e = window.example, votes = e.forestVotes;
+ const assertions = [e.customer.tenure === 2, e.customer.contract === "month-to-month", e.customer.charge === 70, e.tree === "Leave", votes.length === 5, votes.filter(v => v === "Stay").length === 3, votes.filter(v => v === "Leave").length === 2, window.majority(votes) === "Stay", document.getElementById("tenure").textContent === "2 months", document.getElementById("contract").textContent === e.customer.contract, document.getElementById("charge").textContent === "70", document.getElementById("tree").textContent === e.tree, document.getElementById("votes").textContent === "3 Stay / 2 Leave", document.getElementById("forest").textContent === window.majority(votes)];
+ if (assertions.some(x => !x)) throw new Error("An assertion failed");
+ document.getElementById("result").textContent = "PASS: fixture, majority and shared rendering match.";
+} catch (error) { document.getElementById("result").textContent = "FAIL: " + error.message; }
+</script></body></html>

@@ -1,0 +1,10 @@
+const example = window.example;
+const setText = (id, text) => { document.getElementById(id).textContent = text; };
+setText("tenure", `${example.customer.tenure} months`);
+setText("contract", example.customer.contract);
+setText("charge", String(example.customer.charge));
+setText("tree", example.tree);
+const stay = example.forestVotes.filter(v => v === "Stay").length;
+const leave = example.forestVotes.filter(v => v === "Leave").length;
+setText("votes", `${stay} Stay / ${leave} Leave`);
+setText("forest", window.majority(example.forestVotes));

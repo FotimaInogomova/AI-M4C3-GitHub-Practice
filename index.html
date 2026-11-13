@@ -1,0 +1,59 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Tree and forest comparison</title>
+  <style>
+    body {
+      font: 18px/1.55 system-ui, sans-serif;
+      max-width: 760px;
+      margin: 3rem auto;
+      padding: 0 1.25rem;
+      color: #192b37;
+    }
+    h1 { line-height: 1.2; }
+    section {
+      border: 1px solid #aab8c1;
+      padding: 1rem 1.25rem;
+      margin: 1rem 0;
+      border-radius: 8px;
+    }
+    dt { font-weight: 600; }
+    dd { margin: 0 0 .5rem; }
+    small { color: #384b56; }
+  </style>
+</head>
+<body>
+  <main>
+    <h1>Tree and forest comparison</h1>
+    <p>Fictional Telco churn teaching example</p>
+
+    <section>
+      <h2>Customer</h2>
+      <dl>
+        <dt>Tenure</dt>
+        <dd id="tenure"></dd>
+        <dt>Contract</dt>
+        <dd id="contract"></dd>
+        <dt>Monthly charge</dt>
+        <dd id="charge"></dd>
+      </dl>
+    </section>
+
+    <section>
+      <h2>Single tree</h2>
+      <p>Prediction: <strong id="tree"></strong></p>
+    </section>
+
+    <section>
+      <h2>Five-tree forest</h2>
+      <p>Votes: <span id="votes"></span></p>
+      <p>Majority prediction: <strong id="forest"></strong></p>
+      <small>These are votes, not probabilities or measures of lesson performance.</small>
+    </section>
+  </main>
+  <script src="model.js"></script>
+  <script src="app.js"></script>
+</body>
+</html>
